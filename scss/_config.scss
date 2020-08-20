@@ -30,3 +30,29 @@
                         }
                     }
                 }
+                
+                // Media Query Mixins
+                @mixin mediaSm {
+                    @media screen and (max-width: 500px) {
+                        @content; // this will auto grab anything we put in the mixin from another sass file
+                    }
+                }
+                
+                // Media Query Mixins
+                @mixin mediaMd {
+                    @media screen and (max-width: 768px) {
+                        @content; // this will auto grab anything we put in the mixin from another sass file
+                    }
+                }
+                
+                @mixin mediaLg {
+                    @media screen and (min-width: 769px) and (max-width: 1170px) {
+                        @content; // this will auto grab anything we put in the mixin from another sass file
+                    }
+                }
+                
+                @mixin mediaXl {
+                    @media screen and (min-width: 1171px) {
+                        @content; // this will auto grab anything we put in the mixin from another sass file
+                    }
+                }
