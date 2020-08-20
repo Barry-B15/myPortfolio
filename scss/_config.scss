@@ -1,0 +1,32 @@
+                $primary-color: #444; // define a primary color
+                $secondary-color: #eece1a;
+                $show-home-image: true; // show bkgrd img
+                $home-image: url(../img/background.jpg); // images at dist/img folder
+                $background-opacity: 0.9;
+                @mixin easeOut {
+                    // a func for our transition
+                    transition: all 0.5s ease-out; // 1-what to (all),  2-time to(0.5sec), 3- how to transition(ease out)
+                }
+                
+                @mixin background {
+                    @if $show-home-image {
+                        &#bg-img {
+                            background: $home-image;
+                            background-attachment: fixed;
+                            background-size: cover;
+                            //use the overlay class to cover the bg image
+                            // remove the overlay class (in html and here) and use a pseudo elemnt instead for the same effect but add content = '' for this
+                            //.overlay {
+                            &:after {
+                                content: ''; // pseudo class needs a content, set it to null, 
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: -1; // set ziindex to a negative val so it is always behind
+                                background: rgba($primary-color, $background-opacity);
+                            }
+                        }
+                    }
+                }

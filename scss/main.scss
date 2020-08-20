@@ -1,5 +1,73 @@
-$primary-color: #444; // define a primary color
+@import 'config';
+* {
+    box-sizing: border-box; // this makes sure if we add paddings, it does not affect the size of the box and outer layaout
+}
+
 body {
+    @include background;
     background: $primary-color; // set the background to the primary color
     color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+// headings
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 400;
+    // use sass to nest
+    &.lg-heading {
+        font-size-adjust: 6rem;
+    }
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5); //lighten takes 2 params: color and how light we want 
+        // rgba makes it possible to see thru
+    }
+}
+
+// style the links
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+// header style
+header {
+    position: fixed;
+    z-index: 2; // the bigger the number the closer to you, 1 will go behind 2 while 3 will go in front
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+// style main section
+main {
+    padding: 4rem;
+    height: 100%;
+    // style the icons
+    .icons {
+        margin-top: 1rem;
+    }
+    a {
+        padding: 0.4rem;
+        &:hover {
+            color: $secondary-color;
+            // transition: all 1.5s ease-out; // moved to mixin
+            @include easeOut(); // call the mixin w/ include keyword
+        }
+    }
+    &#home {
+        overflow: hidden; // we should never have a scrollbar on our page
+        h1 {
+            margin-top: 20vh;
+        }
+    }
 }
