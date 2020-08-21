@@ -19,4 +19,4 @@ Special thanks to guy at Traversy Media for being a great teacher and for making
 Watch the series on YouTube at: [Responsive Portfolio Website](https://youtu.be/gYzHS-n2gqU?list=PLillGF-RfqbYoGoCjKoMOkVznV6aSXKzU)
 
 ## Status: 
-Deployed at: 
+Deployed at: [myPortfolio](https://Barry-B15.github.io/myPortfolio)
