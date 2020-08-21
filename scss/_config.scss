@@ -31,6 +31,17 @@
                     }
                 }
                 
+                // set Text Color
+                // this will change our text color depending on what the bg color is
+                @function set-text-color($color) {
+                    @if (lightness($color) > 40) {
+                        @return #000; // return black if lightness is > 40
+                    }
+                    @else {
+                        // otherwise return white
+                        @return #fff;
+                    }
+                } // now we can use this in our main.scss body for 'color' and for the menu & nav-links too
                 // Media Query Mixins
                 @mixin mediaSm {
                     @media screen and (max-width: 500px) {
