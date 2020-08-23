@@ -153,7 +153,7 @@ main {
     display: block; // or inline-block;
     padding: 0.5rem 1rem;
     border: 0;
-    margin-bottom: 0.3rem;
+    margin: 0 0 0.3rem 0.5rem;
     &:hover {
         background: $secondary-color;
         color: set-text-color($secondary-color);
